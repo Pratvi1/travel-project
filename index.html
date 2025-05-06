@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream Travel Board</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Dream Travel Board</h1>
+
+        
+        <div id="add-destination">
+            <h3>Add a New Travel Destination</h3>
+            <input id="destination-name" type="text" placeholder="Destination Name">
+            <input id="destination-desc" type="text" placeholder="Destination Description">
+            <input id="travel-package-name" type="text" placeholder="Package Name">
+            <input id="travel-package-price" type="number" placeholder="Package Price">
+            <button onclick="addDestination()">Add Destination</button>
+        </div>
+
+        
+        <div id="destination-list-section">
+            <h3>Your Dream Destinations</h3>
+            <ul id="destination-list"></ul>
+        </div>
+
+        
+        <div id="destination-details-section" style="display: none;">
+            <h3 id="destination-name-detail"></h3>
+            <p id="destination-desc-detail"></p>
+            <h4>Packages</h4>
+            <ul id="destination-packages"></ul>
+            <button onclick="goBackToList()">Back to List</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
