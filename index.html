@@ -1,41 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dream Travel Board</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dream Travel Board</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div class="container">
-        <h1>Dream Travel Board</h1>
+  <!-- Sticky Navbar -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="brand" tabindex="0">Dream Travel</div>
+    <ul class="menu" role="menubar">
+      <li role="none"><a href="#" role="menuitem" tabindex="0" class="active" data-target="home-page">Home</a></li>
+      <li role="none"><a href="#" role="menuitem" tabindex="0" data-target="destinations-page">Destinations</a></li>
+      <li role="none"><a href="#" role="menuitem" tabindex="0" data-target="about-page">About</a></li>
+      <li role="none"><a href="#" role="menuitem" tabindex="0" data-target="contact-page">Contact</a></li>
+    </ul>
+  </nav>
 
-        
-        <div id="add-destination">
-            <h3>Add a New Travel Destination</h3>
-            <input id="destination-name" type="text" placeholder="Destination Name">
-            <input id="destination-desc" type="text" placeholder="Destination Description">
-            <input id="travel-package-name" type="text" placeholder="Package Name">
-            <input id="travel-package-price" type="number" placeholder="Package Price">
-            <button onclick="addDestination()">Add Destination</button>
-        </div>
+  <main class="container">
+    <!-- Home Page -->
+    <section id="home-page" class="page active" tabindex="0" aria-label="Home page">
+      <div class="hero">
+        <h1 class="hero-title">Discover Your Dream Travel Destination</h1>
+        <p class="hero-subtext">Explore amazing places and exclusive packages to make your next trip unforgettable.</p>
+        <button class="btn cta" id="home-cta" aria-label="Go to Destinations">Browse Destinations</button>
+      </div>
+      <div class="image-gallery" aria-label="Featured travel images">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Tropical island with palm trees" tabindex="0" data-dest-index="0" />
+        <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=800&q=80" alt="Mountain lake with snow" tabindex="0" data-dest-index="3" />
+        <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=800&q=80" alt="Historic city buildings" tabindex="0" data-dest-index="1" />
+      </div>
+    </section>
 
-        
-        <div id="destination-list-section">
-            <h3>Your Dream Destinations</h3>
-            <ul id="destination-list"></ul>
-        </div>
+    <!-- Destinations Page -->
+    <section id="destinations-page" class="page" tabindex="0" aria-label="Destinations page" hidden>
+      <h2 class="section-title">Dream Destinations</h2>
+      <ul id="destination-list" class="list" role="list"></ul>
+      <div id="destination-details" class="details" hidden>
+        <h3 id="destination-name-detail"></h3>
+        <p id="destination-desc-detail"></p>
+        <h4>Packages</h4>
+        <ul id="destination-packages" class="list"></ul>
+        <button id="back-button" aria-label="Go back to destination list">Back to List</button>
+      </div>
+      <form id="add-destination-form" class="add-form" aria-label="Add new travel destination form">
+        <input type="text" id="destination-name" placeholder="Destination Name" aria-label="Destination Name" required />
+        <input type="text" id="destination-desc" placeholder="Destination Description" aria-label="Destination Description" required />
+        <input type="text" id="travel-package-name" placeholder="Package Name" aria-label="Travel Package Name" required />
+        <input type="number" min="1" id="travel-package-price" placeholder="Package Price" aria-label="Travel Package Price" required />
+        <button type="submit" class="btn">Add Destination</button>
+      </form>
+    </section>
 
-        
-        <div id="destination-details-section" style="display: none;">
-            <h3 id="destination-name-detail"></h3>
-            <p id="destination-desc-detail"></p>
-            <h4>Packages</h4>
-            <ul id="destination-packages"></ul>
-            <button onclick="goBackToList()">Back to List</button>
-        </div>
-    </div>
+    <!-- About Page -->
+    <h2 class="section-title">About Dream Travel Board</h2>
 
-    <script src="script.js"></script>
+<p>
+  At Dream Travel Board, we believe that every journey begins with a dream — a vision of new horizons, breathtaking landscapes, and unforgettable experiences. Our mission is to bring those dreams closer to reality by offering carefully curated travel destinations, thoughtfully crafted packages, and unparalleled service.
+</p>
+<p>
+  Founded by passionate travelers and industry experts, Dream Travel Board is dedicated to empowering you with the knowledge and inspiration needed to plan the perfect trip. Whether you're seeking serene beaches, vibrant cities, historic landmarks, or hidden gems, our platform guides you effortlessly to your ideal destination.
+</p>
+<p>
+  Our curated packages are designed with flexibility and quality in mind. We collaborate with trusted local partners to ensure authentic, immersive experiences that delight every traveler — from the weekend explorer to the seasoned adventurer.
+</p>
+<p>
+  We understand that travel is not just about places; it's about stories, connections, and moments that stay with you for a lifetime. That's why our commitment extends beyond booking, providing personalized recommendations, up-to-date information, and attentive support every step of the way.
+</p>
+<p>
+  Dream Travel Board is more than a travel planner — it’s a community built on curiosity, passion, and the spirit of discovery. Join us today to start your next adventure and turn your travel dreams into cherished memories.
+</p>
+
+<section aria-label="Our Core Values" class="core-values" style="margin-top:3rem;">
+  <h3>Our Core Values</h3>
+  <ul style="list-style:none; padding-left:0; max-width:600px; margin-top:1rem;">
+    <li style="margin-bottom:1rem;">
+      <strong>Transparency:</strong> Clear, honest information to help you make informed travel choices.
+    </li>
+    <li style="margin-bottom:1rem;">
+      <strong>Quality:</strong> Handpicked destinations and trusted partners to guarantee a superior experience.
+    </li>
+    <li style="margin-bottom:1rem;">
+      <strong>Personalization:</strong> Tailored travel packages that suit your preferences and style.
+    </li>
+    <li style="margin-bottom:1rem;">
+      <strong>Sustainability:</strong> Respect for local cultures and environments to ensure responsible travel.
+    </li>
+    <li style="margin-bottom:1rem;">
+      <strong>Support:</strong> Dedicated customer care from planning through your journey.
+    </li>
+  </ul>
+</section>
+
+<section aria-label="Why Choose Us" class="why-choose-us" style="margin-top:3rem;">
+  <h3>Why Choose Dream Travel Board?</h3>
+  <p>
+    Our platform combines deep travel expertise with cutting-edge technology to deliver an intuitive and enjoyable planning experience. Here’s what sets us apart:
+  </p>
+  <ul style="list-style:none; padding-left:0; max-width:700px; margin-top:1rem;">
+    <li style="margin-bottom:1rem;">
+      <strong>Curated Excellence:</strong> Every destination and package is carefully selected to reflect authentic and memorable experiences.
+    </li>
+    <li style="margin-bottom:1rem;">
+      <strong>User-Friendly Design:</strong> Our clean, elegant interface makes searching, comparing, and booking effortless.
+    </li>
+    <li style="margin-bottom:1rem;">
+      <strong>Inspirational Content:</strong> Stunning imagery, detailed descriptions, and traveler tips to ignite your wanderlust.
+    </li>
+    <li style="margin-bottom:1rem;">
+      <strong>Community-Driven:</strong> Real traveler reviews and recommendations enrich your choices with honest insights.
+    </li>
+    <li style="margin-bottom:1rem;">
+      <strong>Continuous Innovation:</strong> We regularly update features and content to provide the most relevant and seamless experience.
+    </li>
+  </ul>
+</section>
+
+<p style="margin-top:3rem; font-style: italic; color:#4b5563; max-width:600px;">
+  Embark on your next great adventure with confidence and clarity. Dream big, travel smart, and explore with Dream Travel Board.
+</p>
+
+
+    <!-- Contact Page -->
+    <section id="contact-page" class="page" tabindex="0" aria-label="Contact page" hidden>
+      <h2 class="section-title">Contact Us</h2>
+      <form id="contact-form" class="contact-form" aria-label="Contact form">
+        <label for="contact-name" class="sr-only">Name</label>
+        <input type="text" id="contact-name" name="contact-name" placeholder="Your Name" required />
+
+        <label for="contact-email" class="sr-only">Email</label>
+        <input type="email" id="contact-email" name="contact-email" placeholder="Your Email" required />
+
+        <label for="contact-message" class="sr-only">Message</label>
+        <textarea id="contact-message" name="contact-message" placeholder="Your Message" rows="5" required></textarea>
+
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="script.js" defer></script>
 </body>
 </html>
